@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2 Новая задача
+  form(action="/new" method="POST")
+    label(for="text") Текст задачи:
+    input(type="text" name="text" required)
+    button(type="submit") Создать

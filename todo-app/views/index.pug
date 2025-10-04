@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 Список задач
+  ul
+    each task in tasks
+      li
+        if task.completed
+          del #{task.text}
+        else
+          | #{task.text}
+        form(action=`/${task.id}/toggle` method="POST" style="display:inline")
+          button(type="submit") Переключить
+        form(action=`/${task.id}/delete` method="POST" style="display:inline")
+          button(type="submit") Удалить

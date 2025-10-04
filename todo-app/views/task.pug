@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h2 Задача №#{task.id}
+  p= task.text
+  if task.completed
+    p Статус: выполнена
+  else
+    p Статус: активна
